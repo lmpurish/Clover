@@ -1,0 +1,12 @@
+.free-consultation{
+    padding: 50px;
+    
+}
+
+.form-consultation button{
+    margin-top: 20px;
+}
+
+.has-error{
+    color: red;
+}

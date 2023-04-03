@@ -1,0 +1,90 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-sm  navbar-toggleable-sm navbar-light bg-white  box-shadow mb-3">
+    <div class="container">
+      <ul class="navbar-nav flex-grow">
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a type="button" [hidden]="!hiddenMe" (click)="hiddenLogo()" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+            class="nav-link text-dark">
+
+            <i class="fa-solid fa-bars fa-2x my-color"></i>
+          </a>
+        </li>
+
+      </ul>
+      <a [hidden]="!hiddenMe" [routerLink]="['/']">
+        <div class="box">
+          <img src="assets/logos/logo-x.png" class="max" alt="Alternate Text" />
+        </div>
+      </a>
+      <div [hidden]="!hiddenMe" class="box-center">
+        <img src="assets/logos/logo-y.png" class="max" alt="Alternate Text" />
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link contenedor" href="https://www.facebook.com/clovercreditsolutions" target="_blank"><img
+                class="zoom" src="assets/images/facebook.png" alt="Alternate Text" /></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link contenedor" href="https://www.instagram.com/clovercreditsolutions/" target="_blank"><img
+                class="zoom" src="assets/images/instagram.png" alt="Alternate Text" /></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link contenedor" href="https://www.linkedin.com/company/clover-credit-solutions/"
+              target="_blank"><img class="zoom" src="assets/images/linkedin.png" alt="Alternate Text" /></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link contenedor">
+              <label class="switch" (change)="changeFlag()">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link contenedor">
+              <img [hidden]="!showMe" class="zoom" width="40px;" src="assets/images/unite-state.png"
+                alt="Alternate Text" />
+              <img [hidden]="showMe" class="zoom" width="40px;" src="assets/images/spain.png" alt="Alternate Text" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="offcanvas offcanvas-start sidebar" data-bs-scroll="true" tabindex="-1" data-bs-backdrop="false"
+  id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <div class="box">
+      <img src="assets/logos/logo-x.png" class="max" alt="Alternate Text" />
+    </div>
+    <div class="box-center"> <img src="assets/logos/logo-y.png" class="max" alt="Alternate Text" /></div>
+    <button type="button" class="btn btn-close" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body sidebar-right">
+    <ul class="">
+      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas" [routerLink]="['/']"><i
+            class="fa-solid fa-house zoom"></i> {{ "Home" | translate }}</a></li>
+      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
+          [routerLink]="['/princing']"><i class="fa-solid fa-credit-card zoom"></i> {{ "Pricing" | translate }}</a></li>
+      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
+          [routerLink]="['/services']"><i class="fa-brands fa-servicestack zoom"></i> {{ "Services" | translate }}</a>
+      </li>
+      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
+          [routerLink]="['/partner']"><i class="fa-solid fa-handshake-simple zoom"></i> {{ "Partners" | translate }}</a>
+      </li>
+      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
+          [routerLink]="['/how-to-repair-my-credit-by-myself']"><i class="fa-solid fa-file-arrow-down zoom"></i> {{ "Download" | translate }} </a></li>
+      <li><a href="https://www.customerstatusportal.com/" class="contenedor" (click)="hiddenLogo()"
+        data-bs-dismiss="offcanvas"  target="_blank"><i class="fa-solid fa-right-to-bracket zoom"></i> {{ "Login" | translate }}</a></li>
+    </ul>
+  </div>
+</div>

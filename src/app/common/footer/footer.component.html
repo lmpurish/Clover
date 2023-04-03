@@ -1,0 +1,25 @@
+<footer >
+  <div class="container text-center">
+    <div class="row ">
+      <div class="col-lg-4 clover-p white">
+        <ul>
+          <li> <a [routerLink]="['/FAQ']"> FAQ</a> </li>
+          <li><a [routerLink]="['/terms-and-conditions']">{{ "TerCFooter" | translate }}</a> </li>
+        </ul>
+      </div>
+      <div class="col-lg-4 clover-p white">
+        <ul>
+          <li>Clover Solutions 2023</li>
+          <li> &copy; {{ "AllRigthsFooter" | translate }}</li>
+          <li>{{ "IWSP" | translate }} <a href="https://iwsplus.com" target="_blank" class="">IWS+</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 clover-p white">
+        <ul>
+          <li><a [routerLink]="['/privacy-policy']">{{ "PrivacyFotter" | translate }}</a></li>
+          <li><a [routerLink]="['/contact']">{{ "ContacFooter" | translate }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

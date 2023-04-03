@@ -1,0 +1,14 @@
+footer {
+  
+  padding: 10px;
+  background-color: #164a41;
+  text-align: left;
+}
+li {
+  list-style: none;
+}
+
+footer a{
+  text-decoration: none;
+  color: white;
+}

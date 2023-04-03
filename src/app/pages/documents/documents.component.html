@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="h1-title dark-green">{{ "DocumentTitle" | translate }}</h1>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-lg-5">
+            <h2 class="clover-h1 dark-green">{{ "DocumentSubtitle" | translate }}</h2>
+            <h3 class="clover-h5 dark-green">{{ "DocumentSubtitle1" | translate }}</h3>
+            <p class="clover-p">{{ "DocumentP" | translate}}</p>
+        </div>
+        <div class="col-lg-5">
+            <form class="form-consultation" novalidate [formGroup]="services.formD"
+                (ngSubmit)="SendEmailDownload(services.formD.value)">
+                <input type="hidden" formControlName="$key" />
+                <label for="email" class="form-label">{{ "email" | translate }}</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                    placeholder="{{ 'Required' | translate }}">
+                <div class="has-error">
+                    <div *ngIf="services.formD.get('email')?.touched && !services.formD.get('email')?.valid">{{
+                        "errorEmail" | translate }}</div>
+                    <div *ngIf="services.formD.get('email')?.errors?.email">{{ "errorEmail2" | translate }}</div>
+                </div>
+                <br>
+                <button class="btn clover-button" type="submit" [disabled]="!services.formD.valid">{{ "DownLoad" | translate }}</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>

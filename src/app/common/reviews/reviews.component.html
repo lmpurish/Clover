@@ -1,0 +1,35 @@
+<div class="container reviews">
+    <h2 class="clover-h1 text-center dark-green">{{ "Reviews" | translate }}</h2>
+    <br>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="assets/images/testimonial2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Nicole Smith</h5>
+                  <p class="card-text">Wow!!! Miraily was able to get 6 items off my credit report. Only been engaging her services for 2 months!!! I’m in the 700 society now. Getting ready to purchase an investment property and now I’m ready! Thank you so much Miraily!!!</p>
+                </div>
+              </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="assets/images/testimonial1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Raissa Jones</h5>
+                  <p class="card-text" [hidden] = "!showComent">Miraily is a great person and her services do exactly what she says they will do! She orchestrates everything and lines it up how you should do things and if you just follow her lead your credit will be where it ... <a class="dark-green" (click)="changeComent()">show more.</a></p>
+                  <p class="card-text" [hidden] = "showComent" >Miraily is a great person and her services do exactly what she says they will do! She orchestrates everything and lines it up how you should do things and if you just follow her lead your credit will be where it needs to be before you know it! I just love working with her as a person! She has a great personality, very personable, and she handles each case as if were her credit that needed to be fixed! I’ve always loved someone that cares about your situation, whatever it may be as you do! It is just the greatest feeling in the world! Believe me; you just dont find that too often! Please use Miraily for your credit repairs, you will not be disappointed! Thanks Miraily for all you have done, are doing, and will do for me!! It has been a pleasure to work with you and I am forever grateful!Thank you, Raissa Jones <a class="dark-green" (click)="changeComent()">show less.</a></p>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card" >
+                <img src="assets/images/testimonial3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">David Gutierrez</h5>
+                  <p class="card-text">As a lender for the past 14 years it is difficult to be able to rely on a trusted credit repair company. Miraily and her team have exceed my expectations with clients and has gotten clients back to us in record time!</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
