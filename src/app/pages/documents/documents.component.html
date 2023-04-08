@@ -11,17 +11,57 @@
         <div class="col-lg-5">
             <form class="form-consultation" novalidate [formGroup]="services.formD"
                 (ngSubmit)="SendEmailDownload(services.formD.value)">
-                <input type="hidden" formControlName="$key" />
-                <label for="email" class="form-label">{{ "email" | translate }}</label>
-                <input type="email" class="form-control" id="email" formControlName="email"
-                    placeholder="{{ 'Required' | translate }}">
-                <div class="has-error">
-                    <div *ngIf="services.formD.get('email')?.touched && !services.formD.get('email')?.valid">{{
-                        "errorEmail" | translate }}</div>
-                    <div *ngIf="services.formD.get('email')?.errors?.email">{{ "errorEmail2" | translate }}</div>
+                <div class="row">
+                    <div class='col-lg-6'>
+                        <label for="name" class="form-label">{{ "FirstName" | translate }}</label>
+                        <input type="text" class="form-control" formControlName="firstName" id="name"
+                            aria-describedby="nameHelp" placeholder="{{ 'Required' | translate }}" required>
+
+                        <div class="has-error"
+                            *ngIf="(services.formD.get('firstName')?.touched || services.formD.get('firstName')?.dirty) && !services.formD.get('firstName')?.valid ">
+                            {{ "errorName" | translate}}
+                        </div>
+                    </div>
+                    <div class='col-lg-6'>
+                        <label for="lastName" class="form-label">{{ "LastName" | translate }}</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName"
+                            aria-describedby="lastNameHelp" placeholder="{{ 'Required' | translate }}" required>
+                        <div class="has-error"
+                            *ngIf="(services.formD.get('lastName')?.touched || services.formD.get('lastName')?.dirty) && !services.formD.get('lastName')?.valid ">
+                            {{ "errorLast" | translate }}</div>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="hidden" formControlName="$key" />
+                        <label for="email" class="form-label">{{ "email" | translate }}</label>
+                        <input type="email" class="form-control" id="email" formControlName="email"
+                            placeholder="{{ 'Required' | translate }}">
+                        <div class="has-error">
+                            <div *ngIf="services.formD.get('email')?.touched && !services.formD.get('email')?.valid">{{
+                                "errorEmail" | translate }}</div>
+                            <div *ngIf="services.formD.get('email')?.errors?.email">{{ "errorEmail2" | translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="phone" class="form-label">{{ "Phone" | translate }}</label>
+                        <input type="text" class="form-control" id="phone" formControlName="phone"
+                            placeholder="{{ 'Required' | translate }}" required mask="(000) 000-0000">
+                        <div class="has-error"
+                            *ngIf="(services.formD.get('phone')?.touched || services.formD.get('phone')?.dirty) && !services.formD.get('phone')?.valid ">
+                            <div *ngIf="services.formD.get('phone')?.touched || services.formD.get('phone')?.dirty">{{
+                                "errorPhone" | translate}}</div>
+                            <div *ngIf="services.formD.get('phone')?.errors?.pattern">{{ "errorPhone2" | translate}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
                 <br>
-                <button class="btn clover-button" type="submit" [disabled]="!services.formD.valid">{{ "DownLoad" | translate }}</button>
+                <button class="btn clover-button" type="submit" [disabled]="!services.formD.valid">{{ "DownLoad" |
+                    translate }}</button>
             </form>
 
         </div>

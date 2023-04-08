@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { SpinnerInterceptor } from './components/interceptors/spinner.intercepto
 import { ServicesComponent } from './pages/services/services.component';
 import { PartnerComponent } from './pages/partner/partner.component';
 
+
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FaqComponent } from './pages/faq/faq.component';
@@ -26,10 +27,16 @@ import { PricingComponent } from './pages/pricing/pricing.component';
 import { ReviewsComponent } from './common/reviews/reviews.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { AboutComponent } from './pages/about/about.component';
+import { IConfig, NgxMaskModule } from 'ngx-mask'
 
-export function HttpLoaderFactory(httpClient: HttpClient){
-  return new TranslateHttpLoader(httpClient, 'assets/Languages/','.json')
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, 'assets/Languages/', '.json')
 }
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -42,13 +49,13 @@ export function HttpLoaderFactory(httpClient: HttpClient){
     PartnerComponent,
     ServicesComponent,
     TaCComponent,
-    FaqComponent, 
+    FaqComponent,
     PrivacyPolicyComponent,
     PricingComponent,
     ReviewsComponent,
     DocumentsComponent,
     AboutComponent
-    
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -57,18 +64,20 @@ export function HttpLoaderFactory(httpClient: HttpClient){
     ReactiveFormsModule,
     BrowserAnimationsModule,
     SpinnerModule,
+    NgxMaskModule.forRoot(maskConfig),
     ToastrModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'contact', component: FormConsultationComponent, pathMatch: 'full'},
-      { path: 'services', component: ServicesComponent, pathMatch: 'full'},
-      { path: 'partner', component: PartnerComponent, pathMatch: 'full'},
-      { path: "FAQ", component: FaqComponent, pathMatch: 'full'},
-      { path: "terms-and-conditions", component: TaCComponent, pathMatch: 'full'},
-      { path: "privacy-policy", component: PrivacyPolicyComponent, pathMatch: 'full'},
-      { path: "princing", component: PricingComponent, pathMatch: 'full'},
-      { path: "how-to-repair-my-credit-by-myself", component: DocumentsComponent},
-      { path: "aboutUs", component: AboutComponent}
+      { path: 'home', component: HomeComponent},
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'contact', component: FormConsultationComponent},
+      { path: 'services', component: ServicesComponent},
+      { path: 'partner', component: PartnerComponent},
+      { path: "FAQ", component: FaqComponent},
+      { path: "terms-and-conditions", component: TaCComponent},
+      { path: "privacy-policy", component: PrivacyPolicyComponent},
+      { path: "princing", component: PricingComponent},
+      { path: "how-to-repair-my-credit-by-myself", component: DocumentsComponent },
+      { path: "aboutUs", component: AboutComponent }
     ]),
     TranslateModule.forRoot({
       loader: {
@@ -77,12 +86,14 @@ export function HttpLoaderFactory(httpClient: HttpClient){
         deps: [HttpClient]
       }
     }),
+
   ],
-    
+
 
 
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+
   ],
   bootstrap: [AppComponent]
 })

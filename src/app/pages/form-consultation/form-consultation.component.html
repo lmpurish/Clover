@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-lg-4">
                             <label for="phone" class="form-label">{{ "Phone" | translate }}</label>
-                            <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="{{ 'Required' | translate }}" required>
+                            <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="{{ 'Required' | translate }}" required mask="(000) 000-0000">
                             <div class="has-error" *ngIf="(services.form.get('phone')?.touched || services.form.get('phone')?.dirty) && !services.form.get('phone')?.valid ">
                                 <div *ngIf="services.form.get('phone')?.touched || services.form.get('phone')?.dirty">{{ "errorPhone" | translate}}</div>
                                 <div *ngIf="services.form.get('phone')?.errors?.pattern">{{ "errorPhone2" | translate}}</div>

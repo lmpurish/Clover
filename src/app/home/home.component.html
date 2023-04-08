@@ -1,66 +1,102 @@
 <div class="container">
-  <div class="row banner">
-    <div class="col-lg-7 text-banner ">
-      <h1 class="text-lg-start clover-h1 white">{{ "HomeTitle" | translate}}</h1>
-      <h5 class="text-lg-start clover-h5 white">{{ "HomeSubTitle" | translate }}</h5>
-      <ul class="text-lg-start">
-        <li class="li-2x"><i class="fas fa-check my-color"></i> {{ "get1" | translate }}</li>
-        <li class="li-2x"><i class="fas fa-check my-color"></i> {{ "get2" | translate }}</li>
-        <li class="li-2x"><i class="fas fa-check my-color"></i> {{ "get3" | translate }}</li>
-      </ul>
-      <button type="button" class="btn box-center zoom clover-button" [routerLink]="['/contact']">{{ "buttonGetStarted"
-        | translate }}</button>
-    </div>
-    <div class="col-lg-5">
-      <div class="secundary-banner">
-        <div class="content-img">
-          <img class="img-fluid filter" src="./assets/images/banner.png" alt="Alternate Text" />
+  <div class="banner">
+    <div class="row ">
+      <div class="col-lg-7 text-banner ">
+        <h1 class="text-lg-start clover-h1 white">{{ "HomeTitle" | translate}}</h1>
+        <h5 class="text-lg-start clover-h5 white">{{ "HomeSubTitle" | translate }}</h5>
+        <ul class="text-lg-start">
+          <li class="li-2x"><i class="fas fa-check my-color"></i> {{ "get1" | translate }}</li>
+          <li class="li-2x"><i class="fas fa-check my-color"></i> {{ "get2" | translate }}</li>
+          <li class="li-2x"><i class="fas fa-check my-color"></i> {{ "get3" | translate }}</li>
+        </ul>
+        <button type="button" class="btn box-center zoom clover-button" [routerLink]="['/contact']">{{
+          "buttonGetStarted"
+          | translate }}</button>
+      </div>
+      <div class="col-lg-5">
+        <div class="secundary-banner">
+          <div class="content-img">
+            <img class="img-fluid filter" src="./assets/images/banner.png" alt="Alternate Text" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row about">
-    <div class="col-lg-7">
-      <h3 class="clover-h3  text-center">CloverCredits SOLUTIONS</h3>
-      <p class="clover-p "> <span class="clover-span"> {{ "Mission" | translate }}:</span> {{ "MissionP" | translate }}
-      </p>
-      <p class="clover-p "><span class="clover-span">{{ "Vision" | translate }}:</span> {{ "VisionP" | translate }}</p>
-      <p class="clover-p "><span class="clover-span"> {{ "Objective" | translate }}:</span> {{ "ObjectiveP" | translate }}</p>
-      <h5 > <a class="clover-h5 dark-green" [routerLink]="'/aboutUs'">{{ "LearnClover" | translate }} Clover Credits Solutions</a></h5>
 
-    </div>
-    <div class="col-lg-5">
-      <img class="CEO" src="assets/images/CEO.png" alt="">
-    </div>
   </div>
-  <div class="row about2">
-    <div class="col-lg-3">
-      <div class="col">
-        <div class="card h-100">
-          <iframe class="iframe" min-width="560" height="315" src="https://www.youtube.com/embed/Hzo3gKKGzJU"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+  <div class="about">
+    <div class="row">
+      <div class="col-lg-7">
+        <h3 class="clover-h3  text-center">Clover Credit SOLUTIONS</h3>
+        <p class="clover-p "> <span class="clover-span"> {{ "Mission" | translate }}:</span> {{ "MissionP" | translate
+          }}
+        </p>
+        <p class="clover-p "><span class="clover-span">{{ "Vision" | translate }}:</span> {{ "VisionP" | translate }}
+        </p>
+        <p class="clover-p "><span class="clover-span"> {{ "Objective" | translate }}:</span> {{ "ObjectiveP" |
+          translate
+          }}</p>
+        <h5> <a class="clover-h5 dark-green" href="/aboutUs">{{ "LearnClover" | translate }}</a></h5>
+
+      </div>
+      <div class="col-lg-5">
+        <img class="CEO" src="assets/images/CEO.png" alt="">
+      </div>
+    </div>
+
+  </div>
+  <div class="about2">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="col">
+          <div class="card h-100">
+            <iframe class="iframe" min-width="560" height="315" src="https://www.youtube.com/embed/Hzo3gKKGzJU"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <h3 class="clover-h1 text-center">​{{ "WhatGet" | translate }}</h3>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="row">
+              <div class="col-4 text-center">
+                <img src="assets/images/default-icon-past_15.png" width="80" alt="">
+              </div>
+              <div class="col-8">
+                <h5 class="clover-h5"> {{ "WhatGetSubT1" | translate }}</h5>
+              </div>
+            </div>
+
+            <p class="clover-p">{{ "WhatGetp1" | translate }}</p>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <div class="col-4 text-center">
+                <img src="assets/images/default-icon-monitor-present_15.png" width="80" alt="">
+              </div>
+              <div class="col-8">
+                <h5 class="clover-h5">{{ "WhatGetSubT2" | translate }}</h5>
+              </div>
+            </div>
+            <p class="clover-p">​{{ "WhatGetp2" | translate }}​</p>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <div class="col-4 text-center">
+                <img src="assets/images/default-icon-build-future_15.png" width="80" alt="">
+              </div>
+              <div class="col-8">
+                <h5 class="clover-h5">{{ "WhatGetSubT3" | translate }}</h5>
+              </div>
+            </div>
+            <p class="clover-p">{{ "WhatGetp3" | translate }}​</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-9">
-      <h3 class="clover-h1 text-center">​{{ "WhatGet" | translate }}</h3>
-      <div class="row">
-        <div class="col-lg-4">
-          <h5 class="clover-h5 text-center">{{ "WhatGetSubT1" | translate }}</h5>
-          <p class="clover-p">{{ "WhatGetp1" | translate }}</p>
-        </div>
-        <div class="col-lg-4">
-          <h5 class="clover-h5 text-center">{{ "WhatGetSubT2" | translate }}</h5>
-          <p class="clover-p">​{{ "WhatGetp2" | translate }}​</p>
-        </div>
-        <div class="col-lg-4">
-          <h5 class="clover-h5 text-center">{{ "WhatGetSubT3" | translate }}</h5>
-          <p class="clover-p">{{ "WhatGetp3" | translate }}​</p>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div>

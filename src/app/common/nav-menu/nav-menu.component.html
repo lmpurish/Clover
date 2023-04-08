@@ -1,5 +1,5 @@
 <header class="sticky-top">
-  <nav class="navbar navbar-expand-sm  navbar-toggleable-sm navbar-light bg-white  box-shadow mb-3">
+  <nav class="navbar navbar-expand-sm  navbar-toggleable-sm navbar-light bg-white  box-shadow mb-3" rel="nofollow" name="top">
     <div class="container">
       <ul class="navbar-nav flex-grow">
         <li class="nav-item" [routerLinkActive]="['link-active']">
@@ -12,15 +12,16 @@
         </li>
 
       </ul>
-      <a [hidden]="!hiddenMe" [routerLink]="['/']">
+      <a [hidden]="!hiddenMe" [routerLink]="['/home']">
         <div class="box">
           <img src="assets/logos/logo-x.png" class="max" alt="Alternate Text" />
         </div>
       </a>
-      <div [hidden]="!hiddenMe" class="box-center">
-        <img src="assets/logos/logo-y.png" class="max" alt="Alternate Text" />
-      </div>
-
+      <a [hidden]="!hiddenMe" [routerLink]="['/home']">
+        <div [hidden]="!hiddenMe" class="box-center">
+          <img src="assets/logos/logo-y.png" class="max" alt="Alternate Text" />
+        </div>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
         aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
@@ -71,20 +72,21 @@
   </div>
   <div class="offcanvas-body sidebar-right">
     <ul class="">
-      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas" [routerLink]="['/']"><i
+      <li [routerLinkActive]="['link-active']"><a href="/home" class="contenedor" (click)="hiddenLogo()"><i
             class="fa-solid fa-house zoom"></i> {{ "Home" | translate }}</a></li>
-      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
-          [routerLink]="['/princing']"><i class="fa-solid fa-credit-card zoom"></i> {{ "Pricing" | translate }}</a></li>
-      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
-          [routerLink]="['/services']"><i class="fa-brands fa-servicestack zoom"></i> {{ "Services" | translate }}</a>
+      <li [routerLinkActive]="['link-active']"><a class="contenedor" (click)="hiddenLogo()"  
+          href="/princing"><i class="fa-solid fa-credit-card zoom"></i> {{ "Pricing" | translate }}</a></li>
+      <li [routerLinkActive]="['link-active']"><a class="contenedor" (click)="hiddenLogo()" href="/services"><i
+            class="fa-brands fa-servicestack zoom"></i> {{ "Services" | translate }}</a>
       </li>
-      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
-          [routerLink]="['/partner']"><i class="fa-solid fa-handshake-simple zoom"></i> {{ "Partners" | translate }}</a>
+      <li [routerLinkActive]="['link-active']"><a class="contenedor" (click)="hiddenLogo()" href="/partner"><i
+            class="fa-solid fa-handshake-simple zoom"></i> {{ "Partners" | translate }}</a>
       </li>
-      <li><a href="#" class="contenedor" (click)="hiddenLogo()" data-bs-dismiss="offcanvas"
-          [routerLink]="['/how-to-repair-my-credit-by-myself']"><i class="fa-solid fa-file-arrow-down zoom"></i> {{ "Download" | translate }} </a></li>
-      <li><a href="https://www.customerstatusportal.com/" class="contenedor" (click)="hiddenLogo()"
-        data-bs-dismiss="offcanvas"  target="_blank"><i class="fa-solid fa-right-to-bracket zoom"></i> {{ "Login" | translate }}</a></li>
+      <li [routerLinkActive]="['link-active']"><a class="contenedor" (click)="hiddenLogo()" 
+          href="/how-to-repair-my-credit-by-myself"><i class="fa-solid fa-file-arrow-down zoom"></i> {{
+          "Download" | translate }} </a></li>
+      <li [routerLinkActive]="['link-active']"><a href="https://www.customerstatusportal.com/" class="contenedor" (click)="hiddenLogo()"><i
+            class="fa-solid fa-right-to-bracket zoom"></i> {{ "Login" | translate }}</a></li>
     </ul>
   </div>
 </div>
